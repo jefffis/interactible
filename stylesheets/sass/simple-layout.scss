@@ -72,6 +72,15 @@ h3 {
     line-height: 1;
     margin: 0 0 1.5rem;
 }
+h4 {
+    border-left: .25rem solid currentColor;
+    font-size: 1.5rem;
+    font-weight: normal;
+    letter-spacing: -.5px;
+    line-height: 1.2;
+    margin: 4rem 0;
+    padding-left: 1rem;
+}
 p {
     color: #999;
     margin-top: 2.5rem;
@@ -162,8 +171,19 @@ input {
     h3 {
         font-size: 3rem;
     }
+    h4 {
+        font-size: 2rem;
+        letter-spacing: -1.5px;
+    }
     .cls {
         display: inline-block;
         margin: 0 0 0 1rem;
+    }
+}
+
+@media screen and (min-width: 55rem){
+    h4 {
+        margin-left: -2rem;
+        margin-right: -2rem;
     }
 }
