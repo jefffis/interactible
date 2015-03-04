@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title dir="ltr">Interactibles</title>
+		<meta name="description" content="Simple CSS library for better interactions on your webs." />
+
+		<meta name="fullcss" content="stylesheets/interactibles.min.css" />
+		<script>
+		document.addEventListener("touchstart", function() {},false);
+		/*! EnhanceJS: a progressive enhancement boilerplate. Copyright 2014 @scottjehl, Filament Group, Inc. Licensed MIT */
+		(function(j,e){j.enhance={};var o=j.document,d=o.documentElement,n=o.head||o.getElementsByTagName("head")[0],g="fullcss",m="fulljs",i="fonts",c=["enhanced"];function h(s){var r=j.document.getElementsByTagName("script")[0];var q=j.document.createElement("script");q.src=s;r.parentNode.insertBefore(q,r);return q}enhance.loadJS=h;function f(q,t,u){var r=j.document.createElement("link");var s=t||j.document.getElementsByTagName("script")[0];r.rel="stylesheet";r.href=q;r.media="only x";s.parentNode.insertBefore(r,s);setTimeout(function(){r.media=u||"all"});return r}enhance.loadCSS=f;function p(q){var t=j.document.getElementsByTagName("meta");var s;for(var r=0;r<t.length;r++){if(t[r].name&&t[r].name===q){s=t[r];break}}return s}enhance.getMeta=p;function b(s,u,w){if(u===e){var v="; "+j.document.cookie;var t=v.split("; "+s+"=");if(t.length==2){return t.pop().split(";").shift()}return null}else{if(u===false){w=-1}if(w){var r=new Date();r.setTime(r.getTime()+(w*24*60*60*1000));var q="; expires="+r.toGMTString()}else{var q=""}j.document.cookie=s+"="+u+q+"; path=/"}}enhance.cookie=b;var k=p(g);if(k&&!b(g)){f(k.content);b(g,"true",7)}if(!("querySelector" in o)){return}d.className+=" "+c.join(" ");var a=p(m);if(a){h(a.content)}var l=p(i);if(l){f(l.content)}}(this));
+		</script>
+		<!--#if expr="$HTTP_COOKIE=/fullcss\=true/" -->
+		<link href="stylesheets/interactibles.min.css" rel="stylesheet" type="text/css" />
+		<!--#else -->
+		<noscript>
+		    <link href="stylesheets/interactibles.min.css" rel="stylesheet" type="text/css" />
+		</noscript>
+		<!--#endif -->
+	</head>
+	<body>
+	
+		<header role="banner">
+			<h2>
+				Interact<span>ibles</span>
+			</h2>
+			<small>
+				Simple CSS library for better interactions on your webs.
+			</small>
+		</header>
+
+		<div role="main">
+			
+			<h3>Better link styling and interactions.</h3>
+			<p>
+				The web was, and is, built on hyperlinks. Why not put your best foot forward with them?
+			</p>
+			<p>
+				Bacon ipsum dolor amet ham jerky flank, <a href="##">bresaola tenderloin strip</a> steak salami. Tri-tip tail jerky, t-bone corned beef turkey biltong pancetta. Ham tongue shank swine frankfurter. Sausage pork chop turkey ribeye porchetta, venison brisket pig frankfurter.
+			</p>
+			<p>
+				Spare ribs picanha capicola ribeye bacon, landjaeger pancetta. Ground <a href="##">round venison</a> swine shankle bacon prosciutto pig sirloin beef <a href="##">ribs pork fatback</a> hamburger tenderloin.
+			</p>
+
+			<h3>Better buttons.</h3>
+			<p>
+				The call-to-action. Make &rsquo;em stand out, but make it interactible. Let your users know when they are <code>hovering, focusing, or clicking</code> these fellers.
+			</p>
+			<p>
+				<a href="####" class="i-btn">Click me, bro.</a>
+				<a href="######" class="i-btn imp">Seriously.</a>
+			</p>
+
+			<h3>And better form submits.</h3>
+			<p>
+				The bane of the web, yes. But also necessary. So how to make them less shisty? Tell your users what is going on once they take the time to fill yer form out bro.
+			</p>
+			<form>
+				<fieldset>
+					<label for="field">
+						<span>Some field name</span>
+						<input type="text" id="field" />
+					</label>
+				</fieldset>
+				<button class="i-btn" id="submitter" data-submitted="Submitting">Submit me, bro</button>
+				<span class="hide cls" id="remove"></span>
+			</form>
+
+		</div>
+
+		<script>
+			var submit = document.getElementById('submitter'),
+				submittedVal = submit.getAttribute('data-submitted'),
+				oVal = submit.innerHTML,
+				remove = document.getElementById('remove');
+			function submitter(e){
+				e.classList.add('active');
+			}
+			function unSubmitter(e){
+				e.classList.remove('active');
+			}
+			submit.onclick = function(e){
+				e.preventDefault();
+				e.stopPropagation();
+				
+				if(this.className==='i-btn'){
+					submitter(this);
+					this.innerHTML = submittedVal;
+					remove.className = 'cls';
+				}
+			}
+			remove.onclick = function(){
+				unSubmitter(submit);
+				submit.innerHTML = oVal;
+				remove.className = 'cls hide';
+			}
+		</script>
+
+	</body>
+</html>
