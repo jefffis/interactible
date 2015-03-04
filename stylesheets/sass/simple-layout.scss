@@ -16,6 +16,9 @@ html, body {
     // text-align: center;
     width: 100%;
 }
+code, strong {
+    color: $dgrey;
+}
 a {
     color: $blue;
     outline: none;
@@ -118,12 +121,16 @@ fieldset {
 label {
     display: block;
     margin-bottom: 2rem;
+    max-width: 13rem;
     span {
         cursor: pointer;
         display: inline-block;
         font-weight: bold;
         letter-spacing: -.5px;
         margin-bottom: .5rem;
+        &:active {
+            opacity: .75;
+        }
     }
 }
 input {
