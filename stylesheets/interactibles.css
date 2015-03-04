@@ -58,7 +58,7 @@
 html, body {
   background: white;
   color: #040407;
-  font: normal 120%/1.5 'Helvetica Neue', sans-serif;
+  font: normal 120%/1.5 'Helvetica Neue', Arial, sans-serif;
   height: auto;
   margin: auto;
   min-height: 100%;
@@ -189,6 +189,26 @@ input {
   input:focus {
     border-color: #044e73;
     box-shadow: 0 0 0 2px white, 0 0 0 4px #def3fe; }
+  input[type=checkbox] {
+    position: absolute;
+    left: -1000%; }
+    input[type=checkbox] + span:before {
+      border: 2px solid #ddd;
+      border-radius: 3px;
+      content: "\2717";
+      color: white;
+      display: inline-block;
+      height: 1.2rem;
+      line-height: 1;
+      margin-right: .5rem;
+      padding: .25rem;
+      text-align: center;
+      width: 1.2rem; }
+    input[type=checkbox]:checked + span:before {
+      color: #19ADF7; }
+    input[type=checkbox]:focus + span:before {
+      border-color: #044e73;
+      box-shadow: 0 0 0 2px white, 0 0 0 4px #def3fe; }
 
 @media screen and (min-width: 35rem) {
   header {
